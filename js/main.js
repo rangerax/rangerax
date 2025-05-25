@@ -46,9 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Check for saved theme preference or use system preference
-    const currentTheme = localStorage.getItem('theme') || 
-                         (prefersDarkScheme.matches ? 'dark' : 'light');
+    // Check for saved theme preference or default to dark mode
+    const currentTheme = localStorage.getItem('theme') || 'dark';
     
     // Set initial theme
     document.body.setAttribute('data-theme', currentTheme);
@@ -79,16 +78,33 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menuToggle');
     const mobileNav = document.getElementById('mobileNav');
     
+    // Function to close mobile menu
+    function closeMobileMenu() {
+        mobileNav.classList.remove('active');
+        menuToggle.classList.remove('active');
+    }
+    
     menuToggle.addEventListener('click', function() {
+        // Toggle mobile nav
         mobileNav.classList.toggle('active');
+        
+        // Toggle hamburger animation
+        menuToggle.classList.toggle('active');
     });
     
     // Close mobile menu when clicking a link
     const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
     mobileLinks.forEach(link => {
         link.addEventListener('click', function() {
-            mobileNav.classList.remove('active');
+            closeMobileMenu();
         });
+    });
+    
+    // Close mobile menu on window resize to desktop size
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            closeMobileMenu();
+        }
     });
     
     // Header scroll effect
@@ -127,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Close mobile menu if open
             if (mobileNav.classList.contains('active')) {
-                mobileNav.classList.remove('active');
+                closeMobileMenu();
             }
             
             const targetElement = document.querySelector(targetId);
