@@ -144,42 +144,42 @@ document.addEventListener('DOMContentLoaded', function() {
     const galleryImages = [
         {
             src: 'images/gallery/2700rackwith3x600inserts.jpg',
-            title: '2700 Rack - 3x600 Target Configuration',
+            title: 'Original RangeRax 2700 - 3x600 Target Configuration',
             description: '2700 rack with 3x600 wide removable target inserts.'
         },
         {
             src: 'images/gallery/2700rackwith2x600inserts.jpg',
-            title: '2700 Rack - 2x600 Target Configuration',
+            title: 'Original RangeRax 2700 - 2x600 Target Configuration',
             description: '2700 rack with 2x600 wide removable target inserts for spacing between shooters.'
         },
         {
             src: 'images/gallery/2700rackwith2x750inserts.jpg',
-            title: '2700 Rack - 2x750 Target Configuration',
+            title: 'Original RangeRax 2700 - 2x750 Target Configuration',
             description: '2700 rack with 2x7500 wide removable target inserts. The larger 750 wide target frames reduce the likelihood of off target shoots striking the timber frame especially if firing larger calibres.'
         },
         {
             src: 'images/gallery/2700RackLinkExample.jpg',
-            title: '2700 Rack Linking Option',
+            title: 'Original RangeRax 2700 Linking Option',
             description: 'Multiple 2700 racks can be linked together with increase spacing between targets and shooters.'
         },
         {
             src: 'images/gallery/2700sideonview.jpg',
-            title: '2700 Rack Side On',
+            title: 'Original RangeRax 2700 Side On',
             description: '2700 rack side on view.'
         },
         {
             src: 'images/gallery/600750sidebyside.jpg',
-            title: 'Standalone 600 and 750 Racks',
+            title: 'Mobile RangeRax Standalone 600 and 750 Racks',
             description: 'Standalone 600 and 750 wide racks, ideal for various competition and practices where targets need to be offset or place at various distances.'
         },
         {
             src: 'images/gallery/600basecloseup.jpg',
-            title: '600 Standalone Rack Base Closeup',
+            title: 'Mobile RangeRax 600 Standalone Rack Base Closeup',
             description: 'Closeup of the 600 rack base without target frame insert.'
         },
         {
             src: 'images/gallery/750basecloseup.jpg',
-            title: '750 Standalone Rack Base Closeup',
+            title: 'Mobile RangeRax 750 Standalone Rack Base Closeup',
             description: 'Closeup of the 750 rack base without target frame insert. The larger 750 wide target frames reduce the likelihood of off target shoots striking the timber frame especially if firing larger calibres.'
         },
         {
