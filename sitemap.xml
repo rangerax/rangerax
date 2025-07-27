@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<!-- Main Website Page -->
+<url>
+  <loc>https://rangerax.com.au/</loc>
+  <lastmod>2025-07-27T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1.0</priority>
+  
+  <!-- Product Images for SEO -->
+  <image:image>
+    <image:loc>https://rangerax.com.au/images/gallery/2700rackwith3x600inserts.jpg</image:loc>
+    <image:caption>RANGERAX Original 2700 target rack with 3x600 wide removable target inserts</image:caption>
+    <image:title>Original RangerAx 2700 - 3x600 Target Configuration</image:title>
+  </image:image>
+  
+  <image:image>
+    <image:loc>https://rangerax.com.au/images/gallery/600750sidebyside.jpg</image:loc>
+    <image:caption>Mobile RangerAx standalone 600 and 750 wide target racks for dynamic range configurations</image:caption>
+    <image:title>Mobile RangerAx Standalone Target Racks</image:title>
+  </image:image>
+  
+  <image:image>
+    <image:loc>https://rangerax.com.au/images/gallery/2700rackwith2x750inserts.jpg</image:loc>
+    <image:caption>RANGERAX 2700 rack with 2x750 wide target inserts for larger caliber shooting</image:caption>
+    <image:title>Original RangerAx 2700 - 2x750 Target Configuration</image:title>
+  </image:image>
+  
+  <image:image>
+    <image:loc>https://rangerax.com.au/images/gallery/2700RackLinkExample.jpg</image:loc>
+    <image:caption>Multiple RANGERAX 2700 racks linked together for expanded shooting range configurations</image:caption>
+    <image:title>RANGERAX 2700 Linking System</image:title>
+  </image:image>
+  
+  <image:image>
+    <image:loc>https://rangerax.com.au/images/gallery/customexample1.jpg</image:loc>
+    <image:caption>Custom built RANGERAX target racks designed for specific range requirements</image:caption>
+    <image:title>Custom RANGERAX Target Rack Solutions</image:title>
+  </image:image>
+</url>
+
+<!-- Section-based URLs for better SEO -->
+<url>
+  <loc>https://rangerax.com.au/#intro</loc>
+  <lastmod>2025-07-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://rangerax.com.au/#products</loc>
+  <lastmod>2025-07-27T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://rangerax.com.au/#features</loc>
+  <lastmod>2025-07-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://rangerax.com.au/#safety</loc>
+  <lastmod>2025-07-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://rangerax.com.au/#contact</loc>
+  <lastmod>2025-07-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+</urlset>
