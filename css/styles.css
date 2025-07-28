@@ -1476,20 +1476,23 @@ footer {
 
 /* Print Styles - Optimized for better print output */
 @media print {
-    /* Hide navigation and interactive elements */
+    /* Hide navigation and interactive elements only */
     header,
     .mobile-nav,
     .header-controls,
     .nav-links,
     .menu-toggle,
     .theme-toggle,
-    footer,
     .gallery-btn,
     .image-counter,
-    .gallery-thumbnails,
+    .gallery-thumbnails {
+        display: none;
+    }
+    
+    /* Show gallery and product content for brochure-like experience */
     .product-gallery,
     .gallery-container {
-        display: none;
+        display: block !important;
     }
     
     /* Optimize page layout for print */
@@ -1582,6 +1585,168 @@ footer {
         content: " (" attr(href) ")";
         font-size: 10pt;
         color: #666;
+    }
+    
+    /* Gallery print layout - brochure style */
+    .gallery-container {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin: 2rem 0;
+        page-break-inside: avoid;
+    }
+    
+    .gallery-item {
+        display: block !important;
+        page-break-inside: avoid;
+        margin-bottom: 1rem;
+    }
+    
+    .gallery-thumbnail {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        object-fit: contain;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    /* Add image captions for print */
+    .gallery-item::after {
+        content: attr(aria-label);
+        display: block;
+        font-size: 9pt;
+        color: #333;
+        text-align: center;
+        margin-top: 0.5rem;
+        font-weight: 500;
+    }
+    
+    /* Override all theme-specific colors for consistent print */
+    *,
+    *::before,
+    *::after {
+        color: black !important;
+        background: white !important;
+        background-color: white !important;
+        border-color: #ccc !important;
+    }
+    
+    /* Override fade-in animations and ensure all content is visible */
+    .fade-in,
+    .fade-in.active,
+    .content-text,
+    .products-overview,
+    .contact-content,
+    .features-grid,
+    .safety-content {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+    }
+    
+    /* Ensure all text elements are visible */
+    p, span, div, article, section, h1, h2, h3, h4, h5, h6,
+    .content-text, .product-summary, .product-info,
+    .about-text, .section-content, .feature-description,
+    .product-description, .spec-item, .highlight-badge,
+    .contact-methods, .contact-card, .quote-cta {
+        color: black !important;
+        background: transparent !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+    }
+    
+    /* Preserve important styling but ensure black text */
+    .cta-button,
+    .primary-button {
+        background: white !important;
+        color: black !important;
+        border: 2px solid black !important;
+    }
+    
+    /* Ensure hero background is removed completely */
+    .hero::before {
+        display: none !important;
+    }
+    
+    /* Company info section for print */
+    footer {
+        display: block !important;
+        page-break-before: always;
+        padding: 2rem 0;
+        border-top: 2px solid black;
+    }
+    
+    /* Print-specific typography improvements */
+    .section-title {
+        font-size: 14pt;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 0.5rem;
+    }
+    
+    .product-summary,
+    .content-text {
+        font-size: 11pt;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+    
+    /* Contact section specific print styles */
+    .contact-methods {
+        display: flex !important;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .contact-card {
+        flex: 1;
+        min-width: 200px;
+        padding: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    .contact-card h3 {
+        font-size: 12pt;
+        margin-bottom: 0.5rem;
+    }
+    
+    .contact-detail {
+        font-size: 11pt;
+        font-weight: bold;
+    }
+    
+    /* Product cards print layout */
+    .product-cards {
+        display: block !important;
+    }
+    
+    .product-card {
+        margin-bottom: 2rem;
+        padding: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        page-break-inside: avoid;
+    }
+    
+    /* Features grid for print */
+    .features-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin: 2rem 0;
+    }
+    
+    .feature-card {
+        padding: 1rem;
+        page-break-inside: avoid;
     }
 }
 
