@@ -1822,8 +1822,10 @@ footer {
 
 .lightbox-content {
     position: relative;
-    max-width: 90vw;
-    max-height: 90vh;
+    width: 90vw;
+    height: 85vh;
+    max-width: 1000px;
+    max-height: 700px;
     display: flex;
     flex-direction: column;
     background: var(--card);
@@ -1861,16 +1863,16 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-height: 70vh;
+    flex: 1;
+    min-height: 0;
     overflow: hidden;
 }
 
 .lightbox-image {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     display: block;
 }
 
@@ -1918,6 +1920,10 @@ footer {
     -webkit-backdrop-filter: blur(20px);
     color: var(--text);
     border-top: 1px solid rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+    min-height: 120px;
+    max-height: 180px;
+    overflow-y: auto;
 }
 
 [data-theme="dark"] .lightbox-info {
@@ -1953,12 +1959,12 @@ body.lightbox-open {
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
     .lightbox-content {
-        max-width: 95vw;
-        max-height: 95vh;
-    }
-    
-    .lightbox-image-container {
-        max-height: 60vh;
+        width: 95vw;
+        height: auto;
+        max-height: 90vh;
+        max-width: none;
+        border-radius: 8px;
+        margin: 5vh auto;
     }
     
     .lightbox-prev,
@@ -1986,10 +1992,40 @@ body.lightbox-open {
     
     .lightbox-info {
         padding: 15px;
+        height: 140px;
+        min-height: 140px;
+        max-height: 140px;
+        background: var(--card);
+        border-top: 1px solid var(--border);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border-radius: 0;
+        margin: 0;
+        position: relative;
+        flex-shrink: 0;
     }
     
     .lightbox-title {
         font-size: 1.1em;
+    }
+    
+    .lightbox-image {
+        object-fit: contain;
+        object-position: center;
+        max-width: 100%;
+        max-height: 60vh;
+        width: auto;
+        height: auto;
+    }
+    
+    .lightbox-image-container {
+        flex: 0 0 auto;
+        height: auto;
+        min-height: auto;
+        max-height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 

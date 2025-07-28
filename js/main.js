@@ -384,6 +384,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 updateThemeIcons(newTheme);
                 updateLogoForTheme();
                 
+                // Handle hero background slideshow based on theme
+                if (newTheme === 'light') {
+                    // Stop slideshow and clear hero backgrounds in light mode
+                    if (window.heroSlideshowInterval) {
+                        clearInterval(window.heroSlideshowInterval);
+                        window.heroSlideshowInterval = null;
+                    }
+                    // Remove slideshow container if it exists
+                    const slideshowContainer = DOMUtils.safeGetElement('.hero-slideshow');
+                    if (slideshowContainer) {
+                        slideshowContainer.remove();
+                    }
+                } else {
+                    // Start slideshow in dark mode
+                    initHeroBackgroundSlideshow();
+                }
+                
                 // Announce theme change to screen readers
                 const announcement = 'Theme switched to ' + newTheme + ' mode';
                 announceToScreenReader(announcement);
@@ -730,6 +747,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize random hero background with gallery image
     function initializeHeroBackground() {
         try {
+            // Only run background in dark theme
+            const currentTheme = document.body.getAttribute('data-theme') || 'dark';
+            if (currentTheme === 'light') {
+                return;
+            }
+            
             const heroSection = DOMUtils.safeGetElement('.hero');
             if (!heroSection || !galleryImages || galleryImages.length === 0) {
                 return;
@@ -838,7 +861,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hero Background Slideshow - Modern CSS approach
     function initHeroBackgroundSlideshow() {
         // Only run slideshow in dark theme (null means dark theme is default)
-        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const currentTheme = document.body.getAttribute('data-theme') || 'dark';
         if (currentTheme === 'light') {
             return;
         }
@@ -852,7 +875,8 @@ document.addEventListener('DOMContentLoaded', function() {
             '/images/gallery/customexample1.jpg'
         ];
         
-        let currentImageIndex = 0;
+        // Start with a random image index for variety
+        let currentImageIndex = Math.floor(Math.random() * backgroundImages.length);
         let isAnimating = false;
         
         const hero = DOMUtils.safeGetElement('.hero');
@@ -893,9 +917,10 @@ document.addEventListener('DOMContentLoaded', function() {
         layer1.style.cssText = layerStyles + 'opacity: 1;';
         layer2.style.cssText = layerStyles + 'opacity: 0;';
         
-        // Set initial background images
-        layer1.style.backgroundImage = `url('${backgroundImages[0]}')`;
-        layer2.style.backgroundImage = `url('${backgroundImages[1]}')`;
+        // Set initial background images starting from random index
+        layer1.style.backgroundImage = `url('${backgroundImages[currentImageIndex]}')`;
+        const nextIndex = (currentImageIndex + 1) % backgroundImages.length;
+        layer2.style.backgroundImage = `url('${backgroundImages[nextIndex]}')`;
         
         slideshowContainer.appendChild(layer1);
         slideshowContainer.appendChild(layer2);
