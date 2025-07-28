@@ -28,16 +28,6 @@ const galleryConfig = {
             description: 'Multiple 2700 racks can be linked together with increase spacing between targets and shooters.'
         },
         {
-            filename: '2700sideonview.jpg',
-            title: 'Original RANGERAX 2700 Side On',
-            description: '2700 rack side on view.'
-        },
-        {
-            filename: '600750sidebyside.jpg',
-            title: 'Mobile RANGERAX Standalone 600 and 750 Racks',
-            description: 'Standalone 600 and 750 wide racks, ideal for various competition and practices where targets need to be offset or place at various distances.'
-        },
-        {
             filename: '600basecloseup.jpg',
             title: 'Mobile RANGERAX 600 Standalone Rack Base Closeup',
             description: 'Closeup of the 600 rack base without target frame insert.'
@@ -53,9 +43,9 @@ const galleryConfig = {
             description: 'Custom built target racks for a local range requiring an additional lower target area for prone shooting.'
         },
         {
-            filename: 'originalrangeraxinuse.jpg',
-            title: 'Original Rangerax with 600 wide target inserts in use',
-            description: 'Original Rangerax with 600 wide target inserts in use at a local range.'
+            filename: '2700RacksinUse.jpg',
+            title: 'Original RANGERAX 2700 in use.',
+            description: 'The original 2700 racks in use at live range.'
         }
     ]
 };
