@@ -835,6 +835,120 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
+    // Hero Background Slideshow - Modern CSS approach
+    function initHeroBackgroundSlideshow() {
+        // Only run slideshow in dark theme (null means dark theme is default)
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        if (currentTheme === 'light') {
+            return;
+        }
+        
+        // Array of background images for the slideshow
+        const backgroundImages = [
+            '/images/gallery/2700RacksinUse.jpg',
+            '/images/gallery/2700rackwith3x600inserts.jpg', 
+            '/images/gallery/2700rackwith2x750inserts.jpg',
+            '/images/gallery/700rackwith2x600inserts.jpg',
+            '/images/gallery/customexample1.jpg'
+        ];
+        
+        let currentImageIndex = 0;
+        let isAnimating = false;
+        
+        const hero = DOMUtils.safeGetElement('.hero');
+        if (!hero) return;
+        
+        
+        // Create slideshow container and layers
+        const slideshowContainer = document.createElement('div');
+        slideshowContainer.className = 'hero-slideshow';
+        slideshowContainer.style.cssText = `
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        `;
+        
+        // Create two layers for crossfade effect
+        const layer1 = document.createElement('div');
+        const layer2 = document.createElement('div');
+        
+        const layerStyles = `
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            filter: grayscale(100%) contrast(120%) brightness(0.3) blur(1px);
+            transition: opacity 2s ease-in-out;
+            transform: scale(1.1);
+            transform-origin: center center;
+        `;
+        
+        layer1.style.cssText = layerStyles + 'opacity: 1;';
+        layer2.style.cssText = layerStyles + 'opacity: 0;';
+        
+        // Set initial background images
+        layer1.style.backgroundImage = `url('${backgroundImages[0]}')`;
+        layer2.style.backgroundImage = `url('${backgroundImages[1]}')`;
+        
+        slideshowContainer.appendChild(layer1);
+        slideshowContainer.appendChild(layer2);
+        hero.appendChild(slideshowContainer);
+        
+        let activeLayer = layer1;
+        let inactiveLayer = layer2;
+        
+        // Function to transition between backgrounds
+        const transitionBackground = () => {
+            if (isAnimating) {
+                return;
+            }
+            
+            isAnimating = true;
+            currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+            const nextImageUrl = backgroundImages[currentImageIndex];
+            
+            // Load next image in inactive layer
+            inactiveLayer.style.backgroundImage = `url('${nextImageUrl}')`;
+            
+            // Crossfade: hide active, show inactive
+            activeLayer.style.opacity = '0';
+            inactiveLayer.style.opacity = '1';
+            
+            // After transition, swap layers and prepare next image
+            setTimeout(() => {
+                // Swap active/inactive layers
+                [activeLayer, inactiveLayer] = [inactiveLayer, activeLayer];
+                
+                // Prepare next image in now-inactive layer
+                const nextIndex = (currentImageIndex + 1) % backgroundImages.length;
+                inactiveLayer.style.backgroundImage = `url('${backgroundImages[nextIndex]}')`;
+                
+                isAnimating = false;
+            }, 2000);
+        };
+        
+        // Clear any existing slideshow interval to prevent duplicates
+        if (window.heroSlideshowInterval) {
+            clearInterval(window.heroSlideshowInterval);
+        }
+        
+        // Start the slideshow with 15-second intervals
+        window.heroSlideshowInterval = setInterval(transitionBackground, 15000);
+        
+        // For testing: expose function to console
+        window.testHeroTransition = transitionBackground;
+    }
+    
+    // Initialize hero background slideshow
+    initHeroBackgroundSlideshow();
+    
     
     // RANGERAX JavaScript initialized successfully
 });

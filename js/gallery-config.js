@@ -13,7 +13,7 @@ const galleryConfig = {
             description: '2700 rack with 3x600 wide removable target inserts.'
         },
         {
-            filename: '2700rackwith2x600inserts.jpg',
+            filename: '700rackwith2x600inserts.jpg',
             title: 'Original RANGERAX 2700 - 2x600 Target Configuration',
             description: '2700 rack with 2x600 wide removable target inserts for spacing between shooters.'
         },

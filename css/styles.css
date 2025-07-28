@@ -561,18 +561,41 @@ header.scrolled {
     bottom: 0;
     width: 100%;
     height: 100%;
+    background-image: var(--hero-bg-before);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: scroll;
     filter: grayscale(100%) contrast(120%) brightness(0.3) blur(1px);
     z-index: 0;
-    opacity: 0.6;
-    transition: opacity 0.5s ease;
+    opacity: var(--before-opacity, 0.6);
+    transition: opacity 2s ease-in-out;
+}
+
+/* Hero background slideshow layers */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--hero-bg-after);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    filter: grayscale(100%) contrast(120%) brightness(0.3) blur(1px);
+    z-index: 0;
+    opacity: var(--after-opacity, 0);
+    transition: opacity 2s ease-in-out;
 }
 
 /* Theme-specific opacity adjustments */
-[data-theme="light"] .hero::before {
+[data-theme="light"] .hero::before,
+[data-theme="light"] .hero::after {
     display: none;
 }
 
@@ -581,9 +604,15 @@ header.scrolled {
     filter: grayscale(100%) contrast(120%) brightness(0.3) blur(1px);
 }
 
+[data-theme="dark"] .hero::after {
+    opacity: 0;
+    filter: grayscale(100%) contrast(120%) brightness(0.3) blur(1px);
+}
+
 /* Mobile responsive adjustments for hero background */
 @media (max-width: 768px) {
-    .hero::before {
+    .hero::before,
+    .hero::after {
         background-attachment: scroll;
         background-position: center center;
         background-size: cover;
@@ -592,7 +621,8 @@ header.scrolled {
 }
 
 @media (max-width: 480px) {
-    .hero::before {
+    .hero::before,
+    .hero::after {
         background-position: center center;
         background-size: cover;
         min-height: 100vh;
@@ -600,7 +630,8 @@ header.scrolled {
 }
 
 /* Ensure better image coverage for different aspect ratios */
-.hero::before {
+.hero::before,
+.hero::after {
     min-height: 100vh;
     transform: scale(1.1);
     transform-origin: center center;
@@ -608,14 +639,16 @@ header.scrolled {
 
 /* Alternative background sizing for better coverage */
 @supports (background-size: cover) {
-    .hero::before {
+    .hero::before,
+    .hero::after {
         background-size: cover;
     }
 }
 
 /* Fallback for browsers that don't support cover */
 @supports not (background-size: cover) {
-    .hero::before {
+    .hero::before,
+    .hero::after {
         background-size: 100% 100%;
     }
 }
