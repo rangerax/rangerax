@@ -437,8 +437,11 @@ header.scrolled {
 }
 
 .menu-toggle:hover {
-    background: rgba(195, 54, 43, 0.1);
     transform: scale(1.05);
+}
+
+.menu-toggle:focus {
+    outline: none;
 }
 
 /* Hamburger Icon */

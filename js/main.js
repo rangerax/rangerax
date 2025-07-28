@@ -444,6 +444,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 DOMUtils.safeRemoveClass(mobileNav, 'active');
                 DOMUtils.safeRemoveClass(menuToggle, 'active');
                 DOMUtils.safeSetAttribute(menuToggle, 'aria-expanded', 'false');
+                DOMUtils.safeSetAttribute(mobileNav, 'aria-hidden', 'true');
                 
                 // Restore focus management
                 FocusManager.restoreFocus();
@@ -462,6 +463,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 DOMUtils.safeAddClass(mobileNav, 'active');
                 DOMUtils.safeAddClass(menuToggle, 'active');
                 DOMUtils.safeSetAttribute(menuToggle, 'aria-expanded', 'true');
+                DOMUtils.safeSetAttribute(mobileNav, 'aria-hidden', 'false');
                 
                 // Save current focus and trap focus in menu
                 FocusManager.saveFocus();
