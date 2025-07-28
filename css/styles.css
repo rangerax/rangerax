@@ -288,6 +288,10 @@ header.scrolled {
     text-decoration: none;
 }
 
+.logo:focus {
+    outline: none;
+}
+
 .logo-svg {
     height: 30px;
     width: auto;
