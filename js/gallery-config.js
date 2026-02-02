@@ -31,6 +31,11 @@ const galleryConfig = {
             filename: '2700RacksinUse.jpg',
             title: 'Original RANGERAX 2700 in Use',
             description: 'The original 2700 racks in use at a live range, demonstrating their durability and professional-grade performance.'
+        },
+        {
+            filename: '2700side.jpg',
+            title: 'Original RANGERAX 2700 in Use',
+            description: 'The original 2700 racks in use at a live range, demonstrating their durability and professional-grade performance.'
         }
     ]
 };
