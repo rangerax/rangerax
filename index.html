@@ -1357,6 +1357,24 @@
                 flex-direction: column;
                 gap: 0.75rem;
                 align-items: flex-start;
+                padding: 1.5rem 1.5rem 0;
+            }
+
+            .product-body {
+                padding: 1.25rem 1.5rem;
+            }
+
+            .product-footer {
+                padding: 0 1.5rem 1.5rem;
+            }
+
+            .product-title {
+                font-size: 1.75rem;
+            }
+
+            .product-description {
+                font-size: 1rem;
+                line-height: 1.65;
             }
 
             .product-tags {
@@ -1368,6 +1386,14 @@
             .product-specs {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1rem;
+            }
+
+            .spec-content h4 {
+                font-size: 0.8125rem;
+            }
+
+            .spec-content p {
+                font-size: 0.9375rem;
             }
 
             .gallery-header {
@@ -1389,7 +1415,7 @@
 
         @media (max-width: 480px) {
             .container {
-                padding: 0 1.25rem;
+                padding: 0 1rem;
             }
 
             .stats-grid {
@@ -1409,25 +1435,58 @@
                 flex-direction: column;
             }
 
+            /* Product cards - tighter padding, better text flow */
+            .product-header {
+                padding: 1.25rem 1.25rem 0;
+            }
+
+            .product-body {
+                padding: 1rem 1.25rem;
+            }
+
+            .product-footer {
+                padding: 0 1.25rem 1.25rem;
+            }
+
+            .product-title {
+                font-size: 1.5rem;
+            }
+
+            .product-subtitle {
+                font-size: 0.8125rem;
+            }
+
+            .product-description {
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+            }
+
+            /* Specs - single column for better readability */
+            .product-specs {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
             .spec {
-                gap: 0.75rem;
+                gap: 0.875rem;
             }
 
             .spec-icon {
-                width: 36px;
-                height: 36px;
+                width: 40px;
+                height: 40px;
             }
 
             .spec-icon .material-icons {
-                font-size: 1.1rem;
+                font-size: 1.25rem;
             }
 
             .spec-content h4 {
-                font-size: 0.75rem;
+                font-size: 0.875rem;
             }
 
             .spec-content p {
-                font-size: 0.8rem;
+                font-size: 1rem;
             }
 
             .safety-badge {
@@ -1923,7 +1982,7 @@
                 </div>
                 <div class="about-visual">
                     <div class="about-image-wrapper">
-                        <img src="images/gallery/2700rackwith3x600inserts.jpg" alt="RANGERAX 2700 rack system">
+                        <img src="images/gallery/2700side.jpg" alt="RANGERAX 2700 rack system">
                     </div>
                 </div>
             </div>
