@@ -8,34 +8,19 @@ const galleryConfig = {
     // Image data - add or remove entries here
     images: [
         {
-            filename: '2700rackwith3x600inserts.jpg',
-            title: 'Original RANGERAX 2700 - 3x600 Target Configuration',
-            description: '2700 rack with 3x600 wide removable target inserts.'
+            filename: 'mobilefront.jpg',
+            title: 'Mobile RANGERAX - Front View',
+            description: 'Front view of the portable Mobile RANGERAX target rack system, made for QPS. Designed for easy transport and quick setup at any range location.'
         },
         {
-            filename: '700rackwith2x600inserts.jpg',
-            title: 'Original RANGERAX 2700 - 2x600 Target Configuration',
-            description: '2700 rack with 2x600 wide removable target inserts for spacing between shooters.'
+            filename: 'mobileside.jpg',
+            title: 'Mobile RANGERAX - Side Profile',
+            description: 'Side profile showing the sturdy construction and balanced design of the Mobile RANGERAX portable target system, made for QPS.'
         },
         {
-            filename: '2700rackwith2x750inserts.jpg',
-            title: 'Original RANGERAX 2700 - 2x750 Target Configuration',
-            description: '2700 rack with 2x750 wide removable target inserts. The larger 750 wide target frames reduce the likelihood of off target shoots striking the timber frame especially if firing larger calibres.'
-        },
-        {
-            filename: '2700RackLinkExample.jpg',
-            title: 'Original RANGERAX 2700 Linking Option',
-            description: 'Multiple 2700 racks can be linked together with increase spacing between targets and shooters.'
-        },
-        {
-            filename: '600basecloseup.jpg',
-            title: 'Mobile RANGERAX 600 Standalone Rack Base Closeup',
-            description: 'Closeup of the 600 rack base without target frame insert.'
-        },
-        {
-            filename: '750basecloseup.jpg',
-            title: 'Mobile RANGERAX 750 Standalone Rack Base Closeup',
-            description: 'Closeup of the 750 rack base without target frame insert. The larger 750 wide target frames reduce the likelihood of off target shoots striking the timber frame especially if firing larger calibres.'
+            filename: 'mobileback.jpg',
+            title: 'Mobile RANGERAX - Rear View',
+            description: 'Rear view of the Mobile RANGERAX showcasing the robust timber frame construction and target mounting points. Made for QPS.'
         },
         {
             filename: 'customexample1.jpg',
@@ -44,8 +29,8 @@ const galleryConfig = {
         },
         {
             filename: '2700RacksinUse.jpg',
-            title: 'Original RANGERAX 2700 in use.',
-            description: 'The original 2700 racks in use at live range.'
+            title: 'Original RANGERAX 2700 in Use',
+            description: 'The original 2700 racks in use at a live range, demonstrating their durability and professional-grade performance.'
         }
     ]
 };
